@@ -25,9 +25,9 @@ The following guides illustrate how to use some features concretely:
 #### Building and Testing
   `mvn clean install`
   
-  Currently test cases covered all the Rest end point & some Service logic    Total 17 test cases
-  Specifically added one test class #ValidateBusinessFlowTest# to validate end to end flow as ,mentioned in requirement  
+  Added Test cases for all the rest-endpoints & some business logics 
   TO DO : can add more test cases to mock the logics
+  Refer ValidateBusinessFlowTest.java end to end business validation
 
 #### Run the application
 
@@ -49,11 +49,11 @@ Customer ---> Order (M:1)
 Order ----> Payment (M:1)
 
 #### Assumptions :
-   Customer entity contains the customerBalance & walletbalance ,customerBalance indicated net balance to pay for all orders &  walletbalance shows how much additional balance paid by customer 
+   Customer entity contains the customerBalance & walletbalance ,customerBalance indicated net balance to pay for all orders &  walletbalance shows how much          additional money paid by customer 
    
-  Order entity contains net amount for each order & Current status of orders (UNDER_PAY orders consider as pending orders,FULLY_PAID or OVER_PAID orders consider as COMPLETED orders)
+  Order entity contains net amount for each order & Current status of orders (UNDER_PAY orders consider as PRNDING orders,FULLY_PAID or OVER_PAID orders consider   as COMPLETED orders)
   
-  Payment entity will track all they payment made by user & PaymentDTO have flag to make to true or false to reduces money from wallet.in UI perspective user will be able to decide how to proceed the payment,if user select useWalletBalance then one payment entry will be create in Payment table on behalf of ZOOPLUS_WALLET.
+  Payment entity will track all they payment made by user & PaymentDTO have flag to make to true or false to reduct money from wallet.in UI perspective user will   be able to decide how to proceed the payment,if user select useWalletBalance then one payment entry will be create in Payment table on behalf of ZOOPLUS_WALLET.
   Currently by default useWalletBalance is true always
   
   TO DO: need to keep one more transaction status in Payment table to ensure 3rd party payments   
